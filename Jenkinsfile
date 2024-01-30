@@ -17,7 +17,13 @@ pipeline {
         }
 
         stage('Build Docker'){
-            
+            steps{
+                script{
+                    sh '''
+                    echo 'Buid Docker Image'
+                    docker build -t ejejosh/tan_demo:${BUILD_NUMBER} .
+                    '''
+                }          
             }   
         }
 
