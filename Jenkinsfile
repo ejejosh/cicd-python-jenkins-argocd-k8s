@@ -40,6 +40,11 @@ pipeline {
         }
         
         stage('Checkout K8S manifest SCM'){
+            steps {
+                git credentialsId: 'w54t89e4-8g64-78r0-c39rt-rer57igt733', 
+                url: 'https://github.com/ejejosh/cicd-k8s-manifest',
+                branch: 'main'
+            }
             
         }
         
